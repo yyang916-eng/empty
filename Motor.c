@@ -83,15 +83,15 @@ void MotorA_SetPWM(int8_t PWM)
     if (PWM >= 0)
     {
         // 正转
-        DL_GPIO_setPins(GPIO_MOTOR_PORT, GPIO_MOTOR_A_2_PIN);
-        DL_GPIO_clearPins(GPIO_MOTOR_PORT, GPIO_MOTOR_A_1_PIN);
+        DL_GPIO_setPins(GPIO_MOTOR_PORT, GPIO_MOTOR_A_1_PIN);
+        DL_GPIO_clearPins(GPIO_MOTOR_PORT, GPIO_MOTOR_A_2_PIN);
         PWM_SetDuty_CH0(PWM);
     }
     else
     {
         // 反转
-        DL_GPIO_setPins(GPIO_MOTOR_PORT, GPIO_MOTOR_A_1_PIN);
-        DL_GPIO_clearPins(GPIO_MOTOR_PORT, GPIO_MOTOR_A_2_PIN);
+        DL_GPIO_setPins(GPIO_MOTOR_PORT, GPIO_MOTOR_A_2_PIN);
+        DL_GPIO_clearPins(GPIO_MOTOR_PORT, GPIO_MOTOR_A_1_PIN);
         PWM_SetDuty_CH0(-PWM);
     }
 }
@@ -102,15 +102,15 @@ void MotorB_SetPWM(int8_t PWM)
     if (PWM >= 0)
     {
         // 正转
-        DL_GPIO_setPins(GPIO_MOTOR_PORT,GPIO_MOTOR_B_2_PIN);
-        DL_GPIO_clearPins(GPIO_MOTOR_PORT, GPIO_MOTOR_B_1_PIN);
+        DL_GPIO_setPins(GPIO_MOTOR_PORT,GPIO_MOTOR_B_1_PIN);
+        DL_GPIO_clearPins(GPIO_MOTOR_PORT, GPIO_MOTOR_B_2_PIN);
         PWM_SetDuty_CH1(PWM);
     }
     else
     {
         // 反转
-        DL_GPIO_setPins(GPIO_MOTOR_PORT, GPIO_MOTOR_B_1_PIN);
-        DL_GPIO_clearPins(GPIO_MOTOR_PORT, GPIO_MOTOR_B_2_PIN);
+        DL_GPIO_setPins(GPIO_MOTOR_PORT, GPIO_MOTOR_B_2_PIN);
+        DL_GPIO_clearPins(GPIO_MOTOR_PORT, GPIO_MOTOR_B_1_PIN);
         PWM_SetDuty_CH1(-PWM);
     }
 }

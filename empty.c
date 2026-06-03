@@ -158,12 +158,12 @@ int main(void)
         }
 
         /* 计算循迹偏差值 */
-        A.Actual = L1*(26) + L2*(13) + L3*(8) + L4*(0) +
-                   L5*(-8) + L6*(-13) + L7*(-26);
+        A.Actual = L1*(-15) + L2*(-12) + L3*(-6) + L4*(0) +
+                   L5*(6) + L6*(12) + L7*(15);
 
         /* 差速驱动：直行 + PID 纠偏 */
-        MotorA_SetPWM(24 - A.Out);
-        MotorB_SetPWM(24 + A.Out);
+        MotorA_SetPWM(18 - A.Out);
+        MotorB_SetPWM(18 + A.Out);
         
     }
  }
