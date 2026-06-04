@@ -43,9 +43,9 @@
 #include "xunji.h"
 
 PID_t A = {
-	.Kp = 0.32,
+	.Kp = 0.42,
 	.Ki = 0.007,
-	.Kd = 0.70,
+	.Kd = 0.50,
 	.OutMax = 50,
 	.OutMin = -50,
 };
@@ -146,24 +146,24 @@ int main(void)
                 f1();
                 if (L == 0)
                 {
-                    MotorA_SetPWM(10);
-                    MotorB_SetPWM(-10);
+                    MotorA_SetPWM(15);
+                    MotorB_SetPWM(-15);
                 }
                 if (L == 1)
                 {
-                    MotorA_SetPWM(-10);
-                    MotorB_SetPWM(10);
+                    MotorA_SetPWM(-15);
+                    MotorB_SetPWM(15);
                 }
             }
         }
 
         /* 计算循迹偏差值 */
-        A.Actual = L1*(-15) + L2*(-12) + L3*(-6) + L4*(0) +
-                   L5*(6) + L6*(12) + L7*(15);
+        A.Actual = L1*(-25) + L2*(-15) + L3*(-6) + L4*(0) +
+                   L5*(6) + L6*(15) + L7*(25);
 
         /* 差速驱动：直行 + PID 纠偏 */
-        MotorA_SetPWM(18 - A.Out);
-        MotorB_SetPWM(18 + A.Out);
+        MotorA_SetPWM(20 - A.Out);
+        MotorB_SetPWM(20 + A.Out);
         
     }
  }
