@@ -31,7 +31,7 @@ void f1(void)
 {
 
 	//PB24
-    uint32_t portValue1 = DL_GPIO_readPins(GPIO_XUNJI_PIN_0_PORT, GPIO_XUNJI_PIN_0_PIN);
+    uint32_t portValue1 = DL_GPIO_readPins(GPIO_XUNJI_PORT, GPIO_XUNJI_PIN_0_PIN);
 
     // 正确判断引脚电平
     if( (portValue1 & GPIO_XUNJI_PIN_0_PIN) != 0 )
@@ -43,7 +43,7 @@ void f1(void)
         L1 = 0;   // 低电平
     }
 
-    uint32_t portValue2 = DL_GPIO_readPins(GPIO_XUNJI_PIN_1_PORT, GPIO_XUNJI_PIN_1_PIN);
+    uint32_t portValue2 = DL_GPIO_readPins(GPIO_XUNJI_PORT, GPIO_XUNJI_PIN_1_PIN);
 
     //PB15
     if( (portValue2 & GPIO_XUNJI_PIN_1_PIN) != 0 )
@@ -55,7 +55,7 @@ void f1(void)
         L2 = 0;   // 低电平
     }
 
-	uint32_t portValue3 = DL_GPIO_readPins(GPIO_XUNJI_PIN_2_PORT, GPIO_XUNJI_PIN_2_PIN);
+	uint32_t portValue3 = DL_GPIO_readPins(GPIO_XUNJI_PORT, GPIO_XUNJI_PIN_2_PIN);
 
     //PB16
     if( (portValue3 & GPIO_XUNJI_PIN_2_PIN) != 0 )
@@ -67,7 +67,7 @@ void f1(void)
         L3 = 0;   // 低电平
     }
 
-	uint32_t portValue4 = DL_GPIO_readPins(GPIO_XUNJI_PIN_3_PORT, GPIO_XUNJI_PIN_3_PIN);
+	uint32_t portValue4 = DL_GPIO_readPins(GPIO_XUNJI_PORT, GPIO_XUNJI_PIN_3_PIN);
 
     //PB17
     if( (portValue4 & GPIO_XUNJI_PIN_3_PIN) != 0 )
@@ -79,7 +79,7 @@ void f1(void)
         L4 = 0;   // 低电平
     }
 
-	uint32_t portValue5 = DL_GPIO_readPins(GPIO_XUNJI_PIN_4_PORT, GPIO_XUNJI_PIN_4_PIN);
+	uint32_t portValue5 = DL_GPIO_readPins(GPIO_XUNJI_PORT, GPIO_XUNJI_PIN_4_PIN);
 
     //PA18
     if( (portValue5 & GPIO_XUNJI_PIN_4_PIN) != 0 )
@@ -91,7 +91,7 @@ void f1(void)
         L5 = 0;   // 低电平
     }
 
-	uint32_t portValue6 = DL_GPIO_readPins(GPIO_XUNJI_PIN_5_PORT, GPIO_XUNJI_PIN_5_PIN);
+	uint32_t portValue6 = DL_GPIO_readPins(GPIO_XUNJI_PORT, GPIO_XUNJI_PIN_5_PIN);
 
     //PB18
     if( (portValue6 & GPIO_XUNJI_PIN_5_PIN) != 0 )
@@ -103,7 +103,7 @@ void f1(void)
         L6 = 0;   // 低电平
     }
 
-	uint32_t portValue7 = DL_GPIO_readPins(GPIO_XUNJI_PIN_6_PORT, GPIO_XUNJI_PIN_6_PIN);
+	uint32_t portValue7 = DL_GPIO_readPins(GPIO_XUNJI_PORT, GPIO_XUNJI_PIN_6_PIN);
 
     //PA22
     if( (portValue7 & GPIO_XUNJI_PIN_6_PIN) != 0 )
