@@ -2,6 +2,7 @@
 "./Key.o"
 "./LED.o"
 "./Motor.o"
+"./OLED.o"
 "./PID.o"
 "./PWM.o"
 "./Serial.o"

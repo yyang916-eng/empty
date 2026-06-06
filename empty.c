@@ -41,6 +41,7 @@
 #include "Motor.h"
 #include "PID.h"
 #include "xunji.h"
+#include "OLED.h"
 
 PID_t A = {
 	.Kp = 0.42,
@@ -82,6 +83,9 @@ int main(void)
     xunji_Init();
     LED_Init();
     Key_Init();
+    OLED_Init();
+
+    OLED_ShowString(1, 1, "OLED OK!");
 
      DL_TimerA_enableInterrupt(TIMER_0_INST, DL_TIMER_IIDX_ZERO);
 

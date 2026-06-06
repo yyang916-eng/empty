@@ -13,12 +13,13 @@ C_SRCS += \
 ../Key.c \
 ../LED.c \
 ../Motor.c \
+../OLED.c \
 ../PID.c \
 ../PWM.c \
 ../Serial.c \
 ../empty.c \
 ./ti_msp_dl_config.c \
-C:/TI/mspm0_sdk_2_10_00_04/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c \
+D:/LeStoreDownload/CCS/mspm0sdk/mspm0_sdk_2_06_00_05/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c \
 ../xunji.c 
 
 GEN_CMDS += \
@@ -34,6 +35,7 @@ C_DEPS += \
 ./Key.d \
 ./LED.d \
 ./Motor.d \
+./OLED.d \
 ./PID.d \
 ./PWM.d \
 ./Serial.d \
@@ -50,6 +52,7 @@ OBJS += \
 ./Key.o \
 ./LED.o \
 ./Motor.o \
+./OLED.o \
 ./PID.o \
 ./PWM.o \
 ./Serial.o \
@@ -68,6 +71,7 @@ OBJS__QUOTED += \
 "Key.o" \
 "LED.o" \
 "Motor.o" \
+"OLED.o" \
 "PID.o" \
 "PWM.o" \
 "Serial.o" \
@@ -86,6 +90,7 @@ C_DEPS__QUOTED += \
 "Key.d" \
 "LED.d" \
 "Motor.d" \
+"OLED.d" \
 "PID.d" \
 "PWM.d" \
 "Serial.d" \
@@ -104,12 +109,13 @@ C_SRCS__QUOTED += \
 "../Key.c" \
 "../LED.c" \
 "../Motor.c" \
+"../OLED.c" \
 "../PID.c" \
 "../PWM.c" \
 "../Serial.c" \
 "../empty.c" \
 "./ti_msp_dl_config.c" \
-"C:/TI/mspm0_sdk_2_10_00_04/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c" \
+"D:/LeStoreDownload/CCS/mspm0sdk/mspm0_sdk_2_06_00_05/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c" \
 "../xunji.c" 
 
 SYSCFG_SRCS__QUOTED += \

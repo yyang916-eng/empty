@@ -4,7 +4,7 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := D:/TI/CCS/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS
+CG_TOOL_ROOT := D:/LeStoreDownload/CCS/app/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS
 
 GEN_OPTS__FLAG := @"./device.opt" 
 GEN_CMDS__FLAG := -Wl,-l"./device_linker.cmd" 
@@ -14,6 +14,7 @@ ORDERED_OBJS += \
 "./Key.o" \
 "./LED.o" \
 "./Motor.o" \
+"./OLED.o" \
 "./PID.o" \
 "./PWM.o" \
 "./Serial.o" \
@@ -73,6 +74,9 @@ endif
 ifneq ($(strip $(S64_DEPS)),)
 -include $(S64_DEPS)
 endif
+ifneq ($(strip $(INO_DEPS)),)
+-include $(INO_DEPS)
+endif
 ifneq ($(strip $(CLA_DEPS)),)
 -include $(CLA_DEPS)
 endif
@@ -87,6 +91,9 @@ ifneq ($(strip $(C62_DEPS)),)
 endif
 ifneq ($(strip $(C67_DEPS)),)
 -include $(C67_DEPS)
+endif
+ifneq ($(strip $(PDE_DEPS)),)
+-include $(PDE_DEPS)
 endif
 ifneq ($(strip $(K_DEPS)),)
 -include $(K_DEPS)
@@ -136,16 +143,18 @@ all: $(OBJS) $(GEN_CMDS)
 
 # Tool invocations
 empty.out: $(OBJS) $(GEN_CMDS)
-	@echo 'Arm Linker - building target: "$@"'
-	"D:/TI/CCS/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe" @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -gdwarf-3 -Wall -Wl,-m"empty.map" -Wl,-i"C:/TI/mspm0_sdk_2_10_00_04/source" -Wl,-i"C:/Users/24726/workspace_ccstheia/empty" -Wl,-i"C:/Users/24726/workspace_ccstheia/empty/Debug/syscfg" -Wl,-i"D:/TI/CCS/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib" -Wl,--diag_wrap=off -Wl,--display_error_number -Wl,--warn_sections -Wl,--xml_link_info="empty_linkInfo.xml" -Wl,--rom_model -o "empty.out" $(ORDERED_OBJS)
+	@echo 'Building target: "$@"'
+	@echo 'Invoking: Arm Linker'
+	"D:/LeStoreDownload/CCS/app/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS/bin/tiarmclang.exe" @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -gdwarf-3 -Wall -Wl,-m"empty.map" -Wl,-i"D:/LeStoreDownload/CCS/mspm0sdk/mspm0_sdk_2_06_00_05/source" -Wl,-i"D:/compitation/NUEDC/empty/empty" -Wl,-i"D:/compitation/NUEDC/empty/empty/Debug/syscfg" -Wl,-i"D:/LeStoreDownload/CCS/app/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS/lib" -Wl,--diag_wrap=off -Wl,--display_error_number -Wl,--warn_sections -Wl,--xml_link_info="empty_linkInfo.xml" -Wl,--rom_model -o "empty.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "Delay.o" "Key.o" "LED.o" "Motor.o" "PID.o" "PWM.o" "Serial.o" "empty.o" "ti_msp_dl_config.o" "startup_mspm0g350x_ticlang.o" "xunji.o" 
-	-$(RM) "Delay.d" "Key.d" "LED.d" "Motor.d" "PID.d" "PWM.d" "Serial.d" "empty.d" "ti_msp_dl_config.d" "startup_mspm0g350x_ticlang.d" "xunji.d" 
+	-$(RM) "Delay.o" "Key.o" "LED.o" "Motor.o" "OLED.o" "PID.o" "PWM.o" "Serial.o" "empty.o" "ti_msp_dl_config.o" "startup_mspm0g350x_ticlang.o" "xunji.o" 
+	-$(RM) "Delay.d" "Key.d" "LED.d" "Motor.d" "OLED.d" "PID.d" "PWM.d" "Serial.d" "empty.d" "ti_msp_dl_config.d" "startup_mspm0g350x_ticlang.d" "xunji.d" 
+	-@echo 'Finished clean'
 	-@echo ' '
 
 .PHONY: all clean dependents
